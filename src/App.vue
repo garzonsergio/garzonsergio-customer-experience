@@ -20,23 +20,4 @@ export default {
 
 <style>
 @import "./styles/styles.css";
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  /* Font Properties */
-  font-size: 62.5%;
-  font-family: Lato, Helvetica, Arial, sans-serif;
-
-  /* Colors */
-  --title-color: #ffffff;
-  --blue-main: #096799;
-  --blue-secondary: #b7e5fe;
-  --subtitles-color: #545454;
-  --tables-background: #c0c2c4;
-  --tables-lines: #707070;
-}
 </style>

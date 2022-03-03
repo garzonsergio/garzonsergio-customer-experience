@@ -58,4 +58,8 @@ header div figure {
   width: 40%;
   padding: 0 5%;
 }
+
+nav {
+  background-color: var(--background-boxes);
+}
 </style>
