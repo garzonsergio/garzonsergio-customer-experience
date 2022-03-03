@@ -5,13 +5,17 @@
       <figure><img alt="imagen del proyecto" /></figure>
     </div>
     <nav>
-      <button>fdsfsdfdf</button>
+      <ce-button textLabel="Inicio" />
     </nav>
   </header>
 </template>
 <script>
+import CeButton from "@/components/CeButton";
 export default {
   name: "CeHeader",
+  components: {
+    CeButton,
+  },
   data() {
     return {};
   },

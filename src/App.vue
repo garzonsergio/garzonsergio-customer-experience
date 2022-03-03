@@ -29,7 +29,7 @@ export default {
 html {
   /* Font Properties */
   font-size: 62.5%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, Helvetica, Arial, sans-serif;
 
   /* Colors */
   --title-color: #ffffff;
