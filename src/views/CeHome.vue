@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <section>
+      <ce-title />
+    </section>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
+import CeTitle from "@/components/CeTitle.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    CeTitle,
   },
 };
 </script>
+<style scoped>
+section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+</style>
