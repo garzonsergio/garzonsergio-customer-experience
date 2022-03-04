@@ -1,5 +1,7 @@
 <template>
-  <button href="href">{{ textLabel }}</button>
+  <vm-container>
+    <vm-button>{{ textLabel }}</vm-button>
+  </vm-container>
 </template>
 <script>
 export default {
