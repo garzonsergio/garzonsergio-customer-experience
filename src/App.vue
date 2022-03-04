@@ -20,4 +20,7 @@ export default {
 
 <style>
 @import "./styles/styles.css";
+html {
+  font-family: Roboto;
+}
 </style>

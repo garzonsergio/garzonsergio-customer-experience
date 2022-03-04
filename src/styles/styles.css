@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"); */
 
 * {
   box-sizing: border-box;
@@ -10,6 +10,7 @@ html {
   /* Font Properties */
   font-size: 62.5%;
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  --font-project: "Roboto";
 
   /* Colors */
   --background-button: #ffffff;

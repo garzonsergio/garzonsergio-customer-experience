@@ -6,6 +6,9 @@
     </div>
     <nav>
       <ce-button textLabel="Inicio" />
+      <ce-button textLabel="Perfil" />
+      <ce-button textLabel="Tramites" />
+      <ce-button textLabel="Comercial" />
     </nav>
   </header>
 </template>
@@ -60,6 +63,10 @@ header div figure {
 }
 
 nav {
+  display: flex;
   background-color: var(--background-boxes);
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 </style>

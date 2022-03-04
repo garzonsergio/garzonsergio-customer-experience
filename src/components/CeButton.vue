@@ -1,6 +1,6 @@
 <template>
   <vm-container>
-    <vm-button>{{ textLabel }}</vm-button>
+    <button>{{ textLabel }}</button>
   </vm-container>
 </template>
 <script>
@@ -19,18 +19,21 @@ export default {
 };
 </script>
 <style scoped>
+@import "../styles/styles.css";
+
 button {
-  font-size: var(--md);
   background: var(--background-button);
-  border: none;
-  padding: 10px 24px;
   border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--subtitles-color);
+  border: none;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: var(--blue-main);
+  font-family: var(--font-project);
+  font-size: var(--md);
+  font-weight: 400;
   margin: 10px;
+  padding: 10px 24px;
+  text-transform: uppercase;
 }
 
 button:hover {
