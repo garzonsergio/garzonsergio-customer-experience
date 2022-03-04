@@ -30,6 +30,12 @@ html {
     --lg: 2.8rem;
     --md: 1.4rem;
     --sm: 1.2rem;
+
+    /* Margins and paddings */
+    --lg-space: 1.8rem;
+    --md-space: 1rem;
+    --sm-space: 0.5rem;
+    --xsm-space: 0.2rem;
   }
 }
 @media (min-width: 600px) {
@@ -38,6 +44,12 @@ html {
     --lg: 3.8rem;
     --md: 1.6rem;
     --sm: 1.4rem;
+
+    /* Margins and paddings */
+    --lg-space: 3.2rem;
+    --md-space: 2rem;
+    --sm-space: 1rem;
+    --xsm-space: 0.4rem;
   }
 }
 

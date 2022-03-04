@@ -59,7 +59,7 @@ header div figure {
   display: flex;
   justify-content: end;
   width: 40%;
-  padding: 0 5%;
+  padding: 0 var(--lg-space);
 }
 
 nav {

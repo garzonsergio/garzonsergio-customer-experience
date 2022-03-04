@@ -9,7 +9,7 @@ export default {
   props: {
     textLabel: {
       type: String,
-      default: "Button Name",
+      default: "textLabel",
     },
     href: {
       type: String,
@@ -31,8 +31,8 @@ button {
   font-family: var(--font-project);
   font-size: var(--md);
   font-weight: 400;
-  margin: 10px;
-  padding: 10px 24px;
+  margin: var(--sm-space);
+  padding: var(--sm-space) var(--md-space);
   text-transform: uppercase;
 }
 
