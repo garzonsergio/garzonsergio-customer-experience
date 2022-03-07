@@ -1,7 +1,5 @@
 <template>
-  <vm-container>
-    <button>{{ textLabel }}</button>
-  </vm-container>
+  <button>{{ textLabel }}</button>
 </template>
 <script>
 export default {

@@ -9,7 +9,7 @@ const routes = [
     component: CeHome,
   },
   {
-    path: "/Cartera",
+    path: "/Cartera/:code/:prospectId",
     name: "Cartera",
     component: CeCartera,
   },
