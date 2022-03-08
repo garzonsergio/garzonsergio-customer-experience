@@ -5,20 +5,19 @@
       <div class="negotation-content">
         <div class="negotation-content--item">
           <h3>fecha de Escrituración:</h3>
-          <p>{{ customerDetails[0].createdDate }}</p>
+          <p>{{ deal[0]?.DeedScheduleDate }}</p>
         </div>
         <div class="negotation-content--item">
           <h3>fecha de cierre:</h3>
-          <p>{{ customerDetails[0].closeDate }}</p>
+          <p>{{ deal[0]?.CloseDate }}</p>
         </div>
         <div class="negotation-content--item">
           <h3>fecha de entrega:</h3>
-          <p>{{ project.deliveryDate }}</p>
+          <p>{{ project?.deliveryDate }}</p>
         </div>
         <div class="negotation-content--item">
           <h3># encargo fiduciario:</h3>
-          <p>{{ project.name }}</p>
-          <p>{{ customerDetails.identificationNumber }}</p>
+          <p>{{ deal[0]?.AgreementNumber }}</p>
         </div>
       </div>
     </section>
@@ -43,29 +42,31 @@ export default {
   },
   data() {
     return {
-      project: {},
-      payments: {},
       customerDetails: {},
+      project: {},
+      deal: {},
     };
   },
   created() {
-    api.getPayments().then((payments) => (this.payments = payments));
-    this.getCodeProject();
     this.getCustomerDetails();
+    this.getCodeProject();
+    this.getDataD();
   },
   methods: {
+    async getDataD() {
+      const prospectId = await this.$route.params.prospectId;
+      await api.getDeal(prospectId).then((deal) => (this.deal = deal));
+    },
+
     async getCodeProject() {
       const code = await this.$route.params.code;
-      api.getProject(code).then((project) => (this.project = project));
+      await api.getProject(code).then((project) => (this.project = project));
     },
-    async getPaymentsInfo() {
-      const code = await this.$route.params.code;
-      api.getPayments(code).then((payments) => (this.payments = payments));
-    },
+
     async getCustomerDetails() {
       const code = await this.$route.params.code;
       const prospectId = await this.$route.params.prospectId;
-      api
+      await api
         .getCustomerDetail(code, prospectId)
         .then((detail) => (this.customerDetails = detail));
     },
