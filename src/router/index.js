@@ -9,11 +9,11 @@ const routes = [
     component: CeHome,
   },
   {
-    path: "/cartera/:code/:prospectId",
+    path: "/cartera/:code/:prospectId/:customerId",
     name: "Cartera",
     component: CeCartera,
     // Ruta de Prueba
-    // http://localhost:8080/cartera/1234/584c23bd-e6b4-4cfb-a241-00a5877c3a9a
+    // http://localhost:8080/cartera/57827505/c329dbfa-7bb0-45ed-a9dd-3c92b282b9e9/59c0bba4-a2f0-4c6e-abb2-78882c2b332d
   },
   {
     path: "/about",

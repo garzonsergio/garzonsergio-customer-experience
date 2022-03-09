@@ -50,10 +50,10 @@ export default {
   created() {
     this.getCustomerDetails();
     this.getCodeProject();
-    this.getDataD();
+    this.getDealData();
   },
   methods: {
-    async getDataD() {
+    async getDealData() {
       const prospectId = await this.$route.params.prospectId;
       await api.getDeal(prospectId).then((deal) => (this.deal = deal));
     },
@@ -83,7 +83,7 @@ section {
 }
 .negotation-content {
   display: flex;
-  width: 90vw;
+  width: 80vw;
   flex-wrap: wrap;
   justify-content: space-around;
   /* flex-direction: row; */

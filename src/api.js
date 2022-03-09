@@ -52,9 +52,24 @@ async function getCustomerDetail(code, prospectId) {
   }
 }
 
+async function getProspectsByCustomer(customerId) {
+  try {
+    const answers = await fetch(
+      `${url}/getProspectsByCustomer/0d84b6ac/${customerId}`
+    )
+      .then((res) => res.json())
+      .then((res) => res.prospects);
+
+    return answers;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export default {
   getDeal,
   getCustomerDetail,
   getProject,
   getPayments,
+  getProspectsByCustomer,
 };

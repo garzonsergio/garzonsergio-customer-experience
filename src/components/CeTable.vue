@@ -4,7 +4,7 @@
       <tr>
         <th>Pagado</th>
         <td></td>
-        <td></td>
+        <td>{{ formatPesos(totalAmount) }}</td>
       </tr>
     </tfoot>
     <tbody>
@@ -26,7 +26,7 @@
       <tr>
         <td>Cuota</td>
         <td>33.458%</td>
-        <td>53.800.0000000</td>
+        <td>{{ totalAmount }}</td>
       </tr>
     </tbody>
   </table>
@@ -40,11 +40,21 @@ export default {
   data() {
     return {
       payments: {},
+      customerDetails: {},
+      prospectDetails: {},
     };
+  },
+
+  computed: {
+    totalAmount() {
+      return _get(this.prospectDetails, "[0].totalValue", "not working");
+    },
   },
 
   created() {
     this.getPaymentInfo();
+    this.getCustomerDetails();
+    this.getProspectDetail();
   },
   methods: {
     log: console.log,
@@ -67,13 +77,27 @@ export default {
         console.error(error);
       }
     },
+    async getCustomerDetails() {
+      const code = await this.$route.params.code;
+      const prospectId = await this.$route.params.prospectId;
+      await api
+        .getCustomerDetail(code, prospectId)
+        .then((detail) => (this.customerDetails = detail));
+    },
+
+    async getProspectDetail() {
+      const customerId = await this.$route.params.customerId;
+      await api
+        .getProspectsByCustomer(customerId)
+        .then((detail) => (this.prospectDetails = detail));
+    },
   },
 };
 </script>
 <style scoped>
 table {
   font-size: var(--md);
-  width: 90vw;
+  width: 80vw;
   border-collapse: collapse;
   margin: var(--lg-space);
 }

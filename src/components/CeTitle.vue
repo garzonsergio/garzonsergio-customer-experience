@@ -20,6 +20,6 @@ h2 {
   font-size: var(--md);
   padding: var(--sm-space) var(--md-space);
   text-transform: capitalize;
-  width: 90vw;
+  width: 80vw;
 }
 </style>
