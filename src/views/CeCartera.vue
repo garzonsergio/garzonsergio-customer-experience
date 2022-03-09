@@ -23,6 +23,18 @@
     </section>
     <section>
       <ce-title textLabel="detalles de pagos" />
+      <ce-table-detail-payment />
+    </section>
+    <section>
+      <ce-title textLabel="resumen de la cuota inicial" />
+      <ce-table-detail-payment />
+    </section>
+    <section>
+      <ce-title textLabel="plan de pagos programado" />
+      <ce-table-detail-payment />
+    </section>
+    <section>
+      <ce-title textLabel="pagos realizados" />
       <ce-table />
     </section>
   </div>
@@ -32,6 +44,7 @@
 import api from "@/api.js";
 
 import CeTitle from "@/components/CeTitle.vue";
+import CeTableDetailPayment from "@/components/CeTableDetailPayment.vue";
 import CeTable from "@/components/CeTable.vue";
 
 export default {
@@ -39,6 +52,7 @@ export default {
   components: {
     CeTitle,
     CeTable,
+    CeTableDetailPayment,
   },
   data() {
     return {

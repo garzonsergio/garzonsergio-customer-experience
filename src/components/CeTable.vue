@@ -1,12 +1,12 @@
 <template>
   <table>
-    <tfoot>
+    <thead>
       <tr>
-        <th>Pagado</th>
-        <td></td>
-        <td>{{ formatPesos(totalAmount) }}</td>
+        <th>cuota</th>
+        <th>fecha</th>
+        <th>valor</th>
       </tr>
-    </tfoot>
+    </thead>
     <tbody>
       <tr v-for="pay in payments.recordsArray" :key="pay.paymentId">
         <td>
@@ -99,13 +99,17 @@ table {
   font-size: var(--md);
   width: 80vw;
   border-collapse: collapse;
+
   margin: var(--lg-space);
 }
-td {
+td,
+th {
+  border: 1px solid var(--tables-lines);
   text-align: center;
   padding: var(--sm);
 }
-tfoot tr {
-  border-top: 1px solid black;
+tr:nth-child(even),
+th {
+  background-color: var(--tables-background);
 }
 </style>
