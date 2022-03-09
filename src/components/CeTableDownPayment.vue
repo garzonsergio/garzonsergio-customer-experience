@@ -19,6 +19,7 @@
 <script>
 import api from "@/api.js";
 import _get from "lodash/get";
+import _reduce from "lodash/reduce";
 
 export default {
   name: "CeTableDownPayment",
@@ -34,7 +35,13 @@ export default {
       return _get(this.deal, "[0].DownPayment", "value not found");
     },
     downPaymentAccumulated() {
-      return this.payments.reduce((a, b) => a + parseFloat(b.amountValue), 0);
+      return _reduce(
+        this.payments,
+        function (a, b) {
+          return a + parseFloat(b.amountValue);
+        },
+        0
+      );
     },
   },
   created() {
@@ -43,6 +50,7 @@ export default {
   },
   methods: {
     _get: _get,
+    _reduce: _reduce,
     formatPesos(value) {
       let pesos = new Intl.NumberFormat("es-CO", {
         style: "currency",
