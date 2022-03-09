@@ -5,15 +5,19 @@
       <div class="negotation-content">
         <div class="negotation-content--item">
           <h3>fecha de Escrituración:</h3>
-          <p>{{ deal[0]?.DeedScheduleDate }}</p>
+          <p>
+            {{ deal[0] ? deal[0].DeedScheduledDate : "" }}
+          </p>
         </div>
         <div class="negotation-content--item">
           <h3>fecha de cierre:</h3>
-          <p>{{ deal[0]?.CloseDate }}</p>
+          <p>
+            {{ deal[0] ? formatDate(deal[0].CloseDate) : "" }}
+          </p>
         </div>
         <div class="negotation-content--item">
           <h3>fecha de entrega:</h3>
-          <p>{{ project?.deliveryDate }}</p>
+          <p>{{ project ? formatDate(project.deliveryDate) : "" }}</p>
         </div>
         <div class="negotation-content--item">
           <h3># encargo fiduciario:</h3>
@@ -31,7 +35,7 @@
     </section>
     <section>
       <ce-title textLabel="plan de pagos programado" />
-      <ce-table-detail-payment />
+      <ce-table-scheduled-pays />
     </section>
     <section>
       <ce-title textLabel="pagos realizados" />
@@ -42,10 +46,12 @@
 
 <script>
 import api from "@/api.js";
+import _get from "lodash/get";
 
 import CeTitle from "@/components/CeTitle.vue";
 import CeTableDetailPayment from "@/components/CeTableDetailPayment.vue";
 import CeTable from "@/components/CeTable.vue";
+import CeTableScheduledPays from "@/components/CeTableScheduledPays.vue";
 
 export default {
   name: "Cartera",
@@ -53,13 +59,19 @@ export default {
     CeTitle,
     CeTable,
     CeTableDetailPayment,
+    CeTableScheduledPays,
   },
   data() {
     return {
-      customerDetails: {},
+      CeTableSchedulePayscustomerDetails: {},
       project: {},
       deal: {},
     };
+  },
+  computed: {
+    DeedScheduledDate() {
+      return _get(this.deal, "[0].DeedScheduledDate", "test other thing");
+    },
   },
   created() {
     this.getCustomerDetails();
@@ -83,6 +95,10 @@ export default {
       await api
         .getCustomerDetail(code, prospectId)
         .then((detail) => (this.customerDetails = detail));
+    },
+    formatDate(value) {
+      let date = value.slice(0, 10).replace(/-/g, "/");
+      return date;
     },
   },
 };

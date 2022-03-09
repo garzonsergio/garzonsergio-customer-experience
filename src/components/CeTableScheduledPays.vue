@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="pay in payments.recordsArray" :key="pay.paymentId">
+      <tr v-for="pay in paymentsScheduled.recordsArray" :key="pay.paymentId">
         <td>
           {{
             pay.paymentTypeDescription
@@ -33,10 +33,10 @@ import api from "@/api.js";
 import _get from "lodash/get";
 
 export default {
-  name: "CeTable",
+  name: "CeTableScheduledPays",
   data() {
     return {
-      payments: {},
+      paymentsScheduled: {},
       customerDetails: {},
       prospectDetails: {},
     };
@@ -49,7 +49,7 @@ export default {
   },
 
   created() {
-    this.getPaymentInfo();
+    this.getScheduledPayInfo();
     this.getCustomerDetails();
     this.getProspectDetail();
   },
@@ -68,13 +68,13 @@ export default {
       return date;
     },
 
-    async getPaymentInfo() {
+    async getScheduledPayInfo() {
       try {
         const code = await this.$route.params.code;
         const prospectId = await this.$route.params.prospectId;
         await api
-          .getPayments(code, prospectId)
-          .then((payments) => (this.payments = payments));
+          .getScheduledPays(code, prospectId)
+          .then((payments) => (this.paymentsScheduled = payments));
       } catch (error) {
         console.error(error);
       }

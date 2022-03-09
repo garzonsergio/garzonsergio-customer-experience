@@ -38,6 +38,19 @@ async function getPayments(code, prospectId) {
   }
 }
 
+async function getScheduledPays(code, prospectId) {
+  try {
+    const answers = await fetch(
+      `${url}/getCustomerScheduledPayments/0d84b6ac/${code}/${prospectId}`
+    ).then((res) => res.json());
+    // .then((res) => res.recordsArray);
+
+    return answers;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function getCustomerDetail(code, prospectId) {
   try {
     const answers = await fetch(
@@ -72,4 +85,5 @@ export default {
   getProject,
   getPayments,
   getProspectsByCustomer,
+  getScheduledPays,
 };

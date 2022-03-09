@@ -65,6 +65,7 @@ export default {
       }).format(value);
       return percent;
     },
+
     async getProspectDetail() {
       const customerId = await this.$route.params.customerId;
       await api
