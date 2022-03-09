@@ -4,7 +4,6 @@
       <ce-title textLabel="datos de negociación" />
       <div class="negotation-content">
         <div class="negotation-content--item">
-          <div>Image</div>
           <h3>fecha de Escrituración:</h3>
           <p>
             {{ deal[0] ? deal[0].DeedScheduledDate : "" }}

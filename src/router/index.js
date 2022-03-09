@@ -1,12 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CeHome from "../views/CeHome.vue";
 import CeCartera from "../views/CeCartera.vue";
+import CeProfile from "../views/CeProfile.vue";
+import CeProcedures from "../views/CeProcedures.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: CeHome,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: CeProfile,
+  },
+  {
+    path: "/procedures",
+    name: "Procedures",
+    component: CeProcedures,
   },
   {
     path: "/cartera/:code/:prospectId/:customerId",

@@ -4,21 +4,12 @@
       <h1>{{ titlePage }}</h1>
       <figure><img alt="imagen del proyecto" /></figure>
     </div>
-    <nav>
-      <ce-button textLabel="Inicio" />
-      <ce-button textLabel="Perfil" />
-      <ce-button textLabel="Tramites" />
-      <ce-button textLabel="Comercial" />
-    </nav>
   </header>
 </template>
 <script>
-import CeButton from "@/components/CeButton";
 export default {
   name: "CeHeader",
-  components: {
-    CeButton,
-  },
+
   data() {
     return {};
   },
@@ -43,7 +34,7 @@ h1 {
   color: var(--title-color);
   display: flex;
   justify-content: end;
-  width: 60%;
+  width: 50%;
 }
 
 header div {
@@ -60,13 +51,5 @@ header div figure {
   justify-content: end;
   width: 40%;
   padding: 0 var(--lg-space);
-}
-
-nav {
-  display: flex;
-  background-color: var(--background-boxes);
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
 }
 </style>
