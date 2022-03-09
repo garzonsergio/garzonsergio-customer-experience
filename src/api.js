@@ -29,8 +29,9 @@ async function getPayments(code, prospectId) {
   try {
     const answers = await fetch(
       `${url}/getCustomerPayments/0d84b6ac/${code}/${prospectId}`
-    ).then((res) => res.json());
-    // .then((res) => res.recordsArray);
+    )
+      .then((res) => res.json())
+      .then((res) => res.recordsArray);
 
     return answers;
   } catch (error) {
@@ -42,8 +43,9 @@ async function getScheduledPays(code, prospectId) {
   try {
     const answers = await fetch(
       `${url}/getCustomerScheduledPayments/0d84b6ac/${code}/${prospectId}`
-    ).then((res) => res.json());
-    // .then((res) => res.recordsArray);
+    )
+      .then((res) => res.json())
+      .then((res) => res.recordsArray);
 
     return answers;
   } catch (error) {

@@ -31,7 +31,7 @@
     </section>
     <section>
       <ce-title textLabel="resumen de la cuota inicial" />
-      <ce-table-detail-payment />
+      <ce-table-down-payment />
     </section>
     <section>
       <ce-title textLabel="plan de pagos programado" />
@@ -52,6 +52,7 @@ import CeTitle from "@/components/CeTitle.vue";
 import CeTableDetailPayment from "@/components/CeTableDetailPayment.vue";
 import CeTable from "@/components/CeTable.vue";
 import CeTableScheduledPays from "@/components/CeTableScheduledPays.vue";
+import CeTableDownPayment from "@/components/CeTableDownPayment.vue";
 
 export default {
   name: "Cartera",
@@ -60,6 +61,7 @@ export default {
     CeTable,
     CeTableDetailPayment,
     CeTableScheduledPays,
+    CeTableDownPayment,
   },
   data() {
     return {

@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="pay in payments.recordsArray" :key="pay.paymentId">
+      <tr v-for="pay in payments" :key="pay.paymentId">
         <td>
           {{
             pay.paymentTypeDescription
@@ -21,7 +21,9 @@
         </td>
         <td>
           {{
-            pay.amountValue ? formatPesos(pay.amountValue) : "value unavailable"
+            pay.amountValue
+              ? formatPesos(pay.amountValue)
+              : "Valor No Disponible"
           }}
         </td>
       </tr>
