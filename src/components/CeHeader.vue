@@ -4,14 +4,12 @@
       <h1>{{ titlePage }}</h1>
       <figure><img alt="imagen del proyecto" /></figure>
     </div>
-    <nav>
-      <button>fdsfsdfdf</button>
-    </nav>
   </header>
 </template>
 <script>
 export default {
   name: "CeHeader",
+
   data() {
     return {};
   },
@@ -36,7 +34,7 @@ h1 {
   color: var(--title-color);
   display: flex;
   justify-content: end;
-  width: 60%;
+  width: 50%;
 }
 
 header div {
@@ -52,6 +50,6 @@ header div figure {
   display: flex;
   justify-content: end;
   width: 40%;
-  padding: 0 5%;
+  padding: 0 var(--lg-space);
 }
 </style>
